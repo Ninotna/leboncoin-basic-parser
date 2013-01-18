@@ -56,7 +56,7 @@ if (!empty($diff)){
 
 	foreach ($diff as $result) {
 
-		$message = '#'.$i++.' Publiée le '.date("d/m/y à H:i", $result['timestamp']).' : <a href="'.$result['url'].'" target="_blank">'.$result['title'].' ('.$result['price'].')</a><hr>';
+		echo '#'.$i++.' Publiée le '.date("d/m/y à H:i", $result['timestamp']).' : <a href="'.$result['url'].'" target="_blank">'.$result['title'].' ('.$result['price'].')</a><hr>';
 
 	}
 
@@ -64,29 +64,8 @@ if (!empty($diff)){
 
 } else {
 
-	$message = 'Pas de nouvelles annonces depuis le '.date('d/m/y à H:i', $last_annonce).' !';
+	echo 'Pas de nouvelles annonces depuis le '.date('d/m/y à H:i', $last_annonce).' !';
 
 }
 
 ?>
-
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	</head>
-	<body>
-
-<?php 
-
-if (isset($message)){
-
-	echo $message;
-
-}
-
-
-?>
-
-</body>
-</html>
